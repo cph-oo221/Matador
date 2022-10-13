@@ -6,7 +6,7 @@ public class Player {
     private int startPosition = 1;
     private int currentPosition = startPosition;
 
-    private ArrayList<Property> deeds;
+    private ArrayList<Property> deeds = new ArrayList<>();
 
 /*TODO: tilføj en liste til at holde på det spilleren har købt (jvf. Task 1.c)*/
 
@@ -78,12 +78,12 @@ public class Player {
 
     public int getPropertyValues()
     {
-        int value = 0;
+        int values = 0;
         for (Property p : deeds)
         {
-            value += p.getCost();
+            values += p.getCost();
         }
-        return value;
+        return values;
     }
 
 }

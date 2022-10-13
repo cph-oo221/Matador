@@ -22,7 +22,7 @@ public class Tax extends Field{
     @Override
     protected String onReject(Player p) {
 
-        float calcTax = p.getBalance()*0.1f;
+        float calcTax = calculateAssets(p)*0.1f;
         /*Todo: skriv metoden calculateAssets jvf. Task 1.a, så den kaldes fra linjen herunder, som du indkommenterer når metoden er skrevet*/
         //calcTax += calculateAssets(Player p);
 
@@ -35,7 +35,7 @@ public class Tax extends Field{
     public int calculateAssets(Player p)
     {
         int assets = p.getBalance();
-        // assets += p.deeds;
+        assets += p.getPropertyValues();
 
 
         return assets;

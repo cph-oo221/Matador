@@ -43,6 +43,8 @@ public class Property extends Field{
             //p.addDeed(this);
             this.owner = p;
 
+            p.addDeed(this);
+
         }else if(option.equals("payRent")){
             s = "Du har betalt din husleje";
             p.pay(getIncome(),this.owner);

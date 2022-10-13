@@ -26,7 +26,19 @@ public class Tax extends Field{
         /*Todo: skriv metoden calculateAssets jvf. Task 1.a, så den kaldes fra linjen herunder, som du indkommenterer når metoden er skrevet*/
         //calcTax += calculateAssets(Player p);
 
+
+
         p.pay((int) calcTax);
         return "Vi har trukket 10 % af dine aktiver";
     }
+
+    public int calculateAssets(Player p)
+    {
+        int assets = p.getBalance();
+        // assets += p.deeds;
+
+
+        return assets;
+    }
+
 }

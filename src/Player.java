@@ -1,8 +1,13 @@
+import java.util.ArrayList;
+
 public class Player {
     private String name;
     private BankAccount account;
     private int startPosition = 1;
     private int currentPosition = startPosition;
+
+    private ArrayList<Property> deeds;
+
 /*TODO: tilføj en liste til at holde på det spilleren har købt (jvf. Task 1.c)*/
 
     public Player(String name, int amount) {
@@ -65,4 +70,20 @@ public class Player {
     public void recieve(int amount){
         this.account.doTransaction(amount);
     }
+
+    public void addDeed(Property p)
+    {
+        deeds.add(p);
+    }
+
+    public int getPropertyValues()
+    {
+        int value = 0;
+        for (Property p : deeds)
+        {
+            value += p.getCost();
+        }
+        return value;
+    }
+
 }

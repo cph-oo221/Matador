@@ -1,19 +1,44 @@
-
+import java.util.ArrayList;
 
 public class Board {
 
     private Field[] fields = new Field[40];
+    private static ArrayList<ChanceCard> chanceCards = new ArrayList<>();
+
+    private static int index = 0;
 
     /*
     * TODO:
     *   - udvid konstruktoren (jvf. Task 2.d)
     *   - tilføj statiske felter (jvf. Task 2.e, 2.f)
     *   - tilføj statisk metode (jvf. Task 2.g)
-    *
     * */
 
-    Board(String[] fielddata){
+
+    Board(String[] fielddata, ArrayList<String> chancedata){
         createFields(fielddata);
+        createChanceCards(chancedata);
+
+    }
+
+
+    private void createChanceCards(ArrayList<String> data)
+    {
+        for (String s : data)
+        {
+            String[] values = s.split(",");
+            String name =  values[0];
+            int cost = Integer.parseInt(values[1]);
+            int income = Integer.parseInt(values[2]);
+            ChanceCard c = new ChanceCard(name, cost, income);
+            chanceCards.add(c);
+        }
+    }
+
+    public static ChanceCard getChanceCard()
+    {
+        index++;
+        return chanceCards.get(index % chanceCards.size());
     }
 
     private Field[] createFields(String[] data){

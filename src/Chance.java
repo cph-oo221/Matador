@@ -12,7 +12,9 @@ public class Chance extends Field {
     //Todo:implementer denne metode sådan at der bliver trukket et kort fra bunken (se Task 2.b)
     public String onAccept(){
 
-        return "";
+        ChanceCard card = Board.getChanceCard();
+
+        return "Du trak kortet: " + card.getName() + (card.getCost() > 0 ? ":du skal betale: " + card.getCost() + "kr." :  "Du modtager: " + card.getIncome() + " kr.");
     }
 
 }

@@ -60,6 +60,26 @@ public class FileIO {
         return values;
     }
 
+    public ArrayList<String> readChanceData()
+    {
+        File file = new File("Data/chancekortene.csv");
+        ArrayList<String> data = new ArrayList<>();
+        try
+        {
+            Scanner input = new Scanner(file);
+            input.nextLine();
+
+            while (input.hasNextLine())
+            {
+                data.add(input.nextLine());
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            data = null;
+        }
+        return data;
+    }
 
 }
 

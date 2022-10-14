@@ -4,7 +4,7 @@ public class Plot extends Property  {
         super(ID, label,cost, income, seriesID);
 
     }
-
+    @Override
     public String onLand(Player p){
         String s = "";
 

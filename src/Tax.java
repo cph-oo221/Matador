@@ -32,7 +32,7 @@ public class Tax extends Field{
         return "Vi har trukket 10 % af dine aktiver";
     }
 
-    public int calculateAssets(Player p)
+    private int calculateAssets(Player p)
     {
         int assets = p.getBalance();
         assets += p.getPropertyValues();

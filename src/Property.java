@@ -56,4 +56,5 @@ public class Property extends Field{
     protected String onReject(Player p){
         return "";
     }
+    
 }

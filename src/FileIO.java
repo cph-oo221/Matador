@@ -62,7 +62,7 @@ public class FileIO {
 
     public ArrayList<String> readChanceData()
     {
-        File file = new File("Data/chancekortene.csv");
+        File file = new File("Data/Xhancekortene.csv");
         ArrayList<String> data = new ArrayList<>();
         try
         {
